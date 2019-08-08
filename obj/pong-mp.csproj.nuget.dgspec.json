@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "d:\\dev\\github\\pong-mp\\pong-mp.csproj": {}
+  },
+  "projects": {
+    "d:\\dev\\github\\pong-mp\\pong-mp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\dev\\github\\pong-mp\\pong-mp.csproj",
+        "projectName": "pong-mp",
+        "projectPath": "d:\\dev\\github\\pong-mp\\pong-mp.csproj",
+        "packagesPath": "C:\\Users\\zegol\\.nuget\\packages\\",
+        "outputPath": "d:\\dev\\github\\pong-mp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\zegol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.0": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.0, )",
+              "autoReferenced": true
+            },
+            "MonoGame.Content.Builder": {
+              "target": "Package",
+              "version": "[3.7.0.9, )"
+            },
+            "MonoGame.Framework.DesktopGL.Core": {
+              "target": "Package",
+              "version": "[3.7.0.7, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
