@@ -1,8 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using PongMP.GameElements;
 
-namespace pong_mp
+namespace PongMP
 {
     public class PongMP : Game
     {
@@ -19,7 +20,7 @@ namespace pong_mp
 
         protected override void Initialize()
         {
-            gameRenderer = new GameRenderer();
+            gameRenderer = new GameRenderer(GraphicsDevice);
 
             base.Initialize();
         }
@@ -27,7 +28,12 @@ namespace pong_mp
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            gameRenderer.RegisterGameElementElement(new GameElement(GraphicsDevice, 0, 0, 0, 50, 50, Color.White));
+            gameRenderer.RegisterGameElementElement(new BallElement(GraphicsDevice, 0, Color.White, 0, 0));
+        }
+
+        protected override void UnloadContent()
+        {
+            gameRenderer.UnloadGame();
         }
 
         protected override void Update(GameTime gameTime)
@@ -35,7 +41,12 @@ namespace pong_mp
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            gameRenderer.UpdateGame();
+            if (Keyboard.GetState().IsKeyDown(Keys.R))
+            {
+                gameRenderer.FindElement(0).MoveTo(0, 0);
+            }
+
+            gameRenderer.UpdateGame(gameTime);
 
             base.Update(gameTime);
         }

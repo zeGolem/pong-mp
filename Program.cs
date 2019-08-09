@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace pong_mp
+namespace PongMP
 {
     public static class Program
     {

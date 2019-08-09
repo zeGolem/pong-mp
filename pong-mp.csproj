@@ -14,5 +14,8 @@
     <Content Include="PongMP.cs" />
     <Content Include="GameRenderer.cs" />
     <Content Include="GameElement.cs" />
+    <Content Include="GameElements\GameElement.cs" />
+    <Content Include="GameElements\BallElement.cs" />
+    <Content Include="Utils.cs" />
   </ItemGroup>
 </Project>
