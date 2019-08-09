@@ -4,12 +4,13 @@ using Microsoft.Xna.Framework.Input;
 
 namespace pong_mp
 {
-    public class Game1 : Game
+    public class PongMP : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        GameRenderer gameRenderer;
 
-        public Game1()
+        public PongMP()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -18,7 +19,7 @@ namespace pong_mp
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            gameRenderer = new GameRenderer();
 
             base.Initialize();
         }
@@ -26,8 +27,7 @@ namespace pong_mp
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            gameRenderer.RegisterGameElementElement(new GameElement(GraphicsDevice, 0, 0, 0, 50, 50, Color.White));
         }
 
         protected override void Update(GameTime gameTime)
@@ -35,16 +35,18 @@ namespace pong_mp
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            gameRenderer.UpdateGame();
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            gameRenderer.DrawGame(spriteBatch);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
