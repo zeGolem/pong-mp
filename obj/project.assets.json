@@ -830,11 +830,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\dev\\github\\pong-mp\\pong-mp.csproj",
-      "projectName": "pong-mp",
-      "projectPath": "d:\\dev\\github\\pong-mp\\pong-mp.csproj",
+      "projectUniqueName": "D:\\dev\\github\\pong-mp\\PongMP.csproj",
+      "projectName": "PongMP",
+      "projectPath": "D:\\dev\\github\\pong-mp\\PongMP.csproj",
       "packagesPath": "C:\\Users\\zegol\\.nuget\\packages\\",
-      "outputPath": "d:\\dev\\github\\pong-mp\\obj\\",
+      "outputPath": "D:\\dev\\github\\pong-mp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

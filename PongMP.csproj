@@ -17,5 +17,9 @@
     <Content Include="GameElements\GameElement.cs" />
     <Content Include="GameElements\BallElement.cs" />
     <Content Include="Utils.cs" />
+    <Content Include="GameElements\WallElement.cs" />
+    <Content Include="Gamemodes\PlayMode.cs" />
+    <Content Include="Gamemodes\Gamemode.cs" />
+    <Content Include="UIRenderer.cs" />
   </ItemGroup>
 </Project>

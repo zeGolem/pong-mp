@@ -7,7 +7,7 @@ namespace PongMP.GameElements
     public class BallElement : GameElement
     {
         public float velocityX = 1f, velocityY = 1f;
-        public BallElement(GraphicsDevice graphicsDevice, int id, Color color, int X, int Y, int Width = 10, int Height = 10) : base(graphicsDevice, id, color, X, Y, Width, Height)
+        public BallElement(GraphicsDevice graphicsDevice, string id, int X, int Y, int Width = 10, int Height = 10) : base(graphicsDevice, id, Color.White, X, Y, Width, Height)
         {
 
         }

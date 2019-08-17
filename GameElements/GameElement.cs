@@ -5,7 +5,7 @@ namespace PongMP.GameElements
 {
     public class GameElement
     {
-        public readonly int id;
+        public readonly string id;
         public float X;
         public float Y;
         public int Width;
@@ -13,7 +13,7 @@ namespace PongMP.GameElements
         public Color Color;
         Texture2D texture;
         public GameRenderer renderer;
-        public GameElement(GraphicsDevice graphicsDevice, int id, Color color, float X, float Y, int Width, int Height)
+        public GameElement(GraphicsDevice graphicsDevice, string id, Color color, float X, float Y, int Width, int Height)
         {
             this.id = id;
             this.X = X;

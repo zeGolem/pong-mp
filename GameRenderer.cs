@@ -30,6 +30,7 @@ namespace PongMP
             foreach (GameElement element in GameElements)
             {
                 element.Draw(spriteBatch);
+                Console.WriteLine($"Drawn element {element.id}");
             }
         }
 
@@ -39,7 +40,7 @@ namespace PongMP
             GameElements.Add(element);
         }
 
-        public GameElement FindElement(int id)
+        public GameElement FindElement(string id)
         {
             foreach (GameElement element in GameElements)
             {

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PongMP.GameElements;
+using PongMP.Gamemodes;
 
 namespace PongMP
 {
@@ -9,7 +10,7 @@ namespace PongMP
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        GameRenderer gameRenderer;
+        public static Gamemode currentGamemode;
 
         public PongMP()
         {
@@ -20,20 +21,18 @@ namespace PongMP
 
         protected override void Initialize()
         {
-            gameRenderer = new GameRenderer(GraphicsDevice);
-
+            currentGamemode = new PlayMode(new GameRenderer(GraphicsDevice), null, GraphicsDevice);
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            gameRenderer.RegisterGameElementElement(new BallElement(GraphicsDevice, 0, Color.White, 0, 0));
+            
         }
 
         protected override void UnloadContent()
         {
-            gameRenderer.UnloadGame();
         }
 
         protected override void Update(GameTime gameTime)
@@ -41,12 +40,8 @@ namespace PongMP
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            if (Keyboard.GetState().IsKeyDown(Keys.R))
-            {
-                gameRenderer.FindElement(0).MoveTo(0, 0);
-            }
 
-            gameRenderer.UpdateGame(gameTime);
+            currentGamemode.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -56,7 +51,7 @@ namespace PongMP
             GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin();
-            gameRenderer.DrawGame(spriteBatch);
+            currentGamemode.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
